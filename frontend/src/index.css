@@ -1,0 +1,9 @@
+img {
+  width: 200px;
+  height: 150px;
+  aspect-ratio: 3\2;
+  gap: 2rem;
+  padding: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

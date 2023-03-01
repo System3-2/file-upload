@@ -23,8 +23,18 @@ pool
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-app.get("/", function (req, res) {
-  res.send("hello");
+app.get("/images", async function (req, res) {
+  const resources = await cloudinary.v2.search
+    .expression("resource_type:image")
+    .sort_by("public_id", "desc")
+    .max_results(30)
+    .execute()
+    // .then((result) => {
+    //   console.log(result);
+    // });
+
+    const result = resources.resources;
+      res.send(result);
 });
 
 app.post("/api/upload", async (req, res) => {

@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/upload": "http://localhost:3000/",
+      "/images": "http://localhost:3000/",
     },
   },
   plugins: [react()],
