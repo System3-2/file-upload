@@ -34,8 +34,7 @@ const Upload = () => {
       body: JSON.stringify({ data: base64EncodedURL}),
       headers: {'Content-Type': 'application/json'}
     }).then(res => {
-      const { url } = (res);
-      setFinalImage(url);
+      console.log(res);
     })
   } catch (error) {
     console.error(error);
